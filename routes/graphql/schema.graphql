@@ -1,0 +1,21 @@
+
+
+type Laptop {
+    name: String
+
+    processor: String!
+
+    img_link: String
+
+    ram: String!
+
+    storage: String!
+
+    display: Float!
+
+    rating: Float! 
+}
+
+type Query {
+    Laptops : [Laptop]!
+}
