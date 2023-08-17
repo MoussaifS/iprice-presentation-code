@@ -23,17 +23,17 @@
                 <span>Would you like a smaller or larger screen on your computer?</span><br>
 
                 <input type="radio" name="screen" value="large">
-                <label for="large-screen">Large size screen</label>
+                <label for="large">Large size screen</label>
                 <br>
 
 
                 <input type="radio" name="screen" value="medium">
-                <label for="medium-screen">medium size screen</label>
+                <label for="medium">medium size screen</label>
                 <br>
 
 
                 <input type="radio" name="screen" value="small">
-                <label for="small-screen">small size screen</label>
+                <label for="small">small size screen</label>
                 <br>
             </div>
 
@@ -81,22 +81,23 @@
                 <br>
 
             </div>
+            
             {{-- sdd size --}}
             <div>
                 <span>How much storage space do you want your computer to have?</span><br>
 
-                <input type="radio" name="storage" value="high">
-                <label for="high"> a lot of space </label>
+                <input type="radio" name="storage" value="1000 GB">
+                <label for="1000 GB"> a lot of space </label>
                 <br>
 
 
-                <input type="radio" name="storage" value="avg">
-                <label for="avg">moderate amount space</label>
+                <input type="radio" name="storage" value="512 GB">
+                <label for="512 GB">moderate amount space</label>
                 <br>
 
-
-                <input type="radio" name="storage" value="low">
-                <label for="low">A little</label>
+                
+                <input type="radio" name="storage" value="256 GB">
+                <label for="256 GB">A little</label>
                 <br>
             </div>
 

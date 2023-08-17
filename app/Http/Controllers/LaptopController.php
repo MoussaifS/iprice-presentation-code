@@ -14,28 +14,16 @@ class LaptopController extends Controller
 
     public function recommended_laptop(Request $request)
     {
-        dd($request -> ram); 
+
+
+
+        dd($this->_getScreenSize($request->screen));
+
         return view('laptop.show ');
     }
 
 
-    // avg wighted as 4
-    // low wighted as 1.5 
-    // high equal 7 
 
-    
-
-    private function _computeProcessorPower($requirement)
-    {
-        $totalProcessorValue = 0;
-        $processorWeightedNumbers = $this->_convertProcessorValuesToWeightedNumbers($requirement);
-
-        foreach ($processorWeightedNumbers as  $number) {
-            $totalProcessorValue += $number;
-        }
-
-        return $totalProcessorValue;
-    }
 
     private function _convertProcessorValuesToWeightedNumbers($values)
     {
@@ -49,8 +37,39 @@ class LaptopController extends Controller
         }, $values);
     }
 
+    private function _computeProcessorPower($requirement)
+    {
+        return array_sum($this->_convertProcessorValuesToWeightedNumbers($requirement));
+    }
 
 
+    private function _getRamSpace($requirement)
+    {
+        switch ($requirement) {
+            case 'low':
+            case 'avg':
+                return 8;
+            case 'high':
+                return 16;
+            default:
+                return 8;
+        }
+    }
+
+    private function _getScreenSize($requirement)
+    {
+        switch ($requirement) {
+            case 'small':
+                return 14;
+            case 'medium':
+                return 16;
+            case 'large':
+                return 18;
+        
+        }
+    }
+
+    
 
     private function _get_laptop_specs_from_user($specs)
     {

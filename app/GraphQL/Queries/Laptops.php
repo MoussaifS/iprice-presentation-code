@@ -39,9 +39,9 @@ final class Laptops
 
     private function _processorPower($prosessor)
     {
-        $highProsessorPower = " | high power prosssor ";
+        $highProsessorPower = " | high power prosssor";
         $averageProsessorPower = " | average power prosssor";
-        $lowProsessorPower = " | low power prosssor";
+        $lowProsessorPower = " |    low power prosssor";
 
         switch ($prosessor) {
             case str_contains($prosessor, "3"):
@@ -62,10 +62,10 @@ final class Laptops
     {
        
         if (str_contains($storage, 'TB')) {
-            $x = intval($storage[0]  * 1000);
-            return $x;
+            return intval($storage[0]  * 1000);
+
         } else {
-            return  intval(substr($storage, 0));
+            return  intval($storage);
         }
     }
 }
