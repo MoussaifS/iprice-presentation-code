@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class LaptopController extends Controller
 {
 
@@ -14,13 +12,23 @@ class LaptopController extends Controller
 
     public function recommended_laptop(Request $request)
     {
+        $laptop = GraphQL::query('
+    {
+        laptops {
+            name
+            processor
+        }
+    }
+');
 
-
-
-        dd($this->_getScreenSize($request->screen));
 
         return view('laptop.show ');
     }
+
+
+
+
+
 
 
 
@@ -65,11 +73,10 @@ class LaptopController extends Controller
                 return 16;
             case 'large':
                 return 18;
-        
         }
     }
 
-    
+
 
     private function _get_laptop_specs_from_user($specs)
     {

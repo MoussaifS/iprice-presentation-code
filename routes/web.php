@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::post('/recommended-laptop' , [LaptopController::class , 'recommended_laptop'] );
+

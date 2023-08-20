@@ -1,21 +1,13 @@
-
-
-type Laptop {
+type Laptop @model {
     name: String
-
     processor: String!
-
     img_link: String
-
     ram: String!
-
     storage: String!
-
     display: Float!
-
-    rating: Float! 
+    rating: Float!
 }
 
 type Query {
-    Laptops : [Laptop]!
+    Laptops: [Laptop!]!
 }

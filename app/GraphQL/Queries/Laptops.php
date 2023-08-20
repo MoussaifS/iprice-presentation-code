@@ -17,7 +17,6 @@ final class Laptops
         $csv = Reader::createFromPath($csvPath, 'r');
         $csv->setHeaderOffset(0);
 
-
         $laptops = [];
 
         foreach ($csv->getRecords() as $record) {
@@ -41,7 +40,7 @@ final class Laptops
     {
         $highProsessorPower = " | high power prosssor";
         $averageProsessorPower = " | average power prosssor";
-        $lowProsessorPower = " |    low power prosssor";
+        $lowProsessorPower = " | low power prosssor";
 
         switch ($prosessor) {
             case str_contains($prosessor, "3"):
